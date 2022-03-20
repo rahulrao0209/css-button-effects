@@ -38,13 +38,14 @@ body {
       color: #fff;
       background-color: $primary-color;
       border-radius: inherit;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       top: 0;
       left: 0;
       transform: translateY(-102%);
       transition: all 0.3s;
+      /*Center text within the before element*/
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     &:hover,

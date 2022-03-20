@@ -46,18 +46,21 @@ body a::after {
   height: 100%;
   background-color: #43c6ac;
   top: 0;
-  left: 0;
+  left: 0.1rem;
   transform: rotateY(90deg);
   transition: transform 1s;
   z-index: -1;
 }
-body a:hover, body a:hover::before {
+body a:hover::before {
   color: #fff;
   transform: rotateX(0);
 }
-body a:hover, body a:hover::after {
+body a:hover::after {
   color: #fff;
   transform: rotateY(0);
+}
+body a:hover {
+  color: #fff;
 }
 @media screen and (min-width: 32rem) {
   body a {

@@ -1,0 +1,117 @@
+$primary-color: #5b86e5;
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+
+  a {
+    width: 22rem;
+    height: 8rem;
+    color: $primary-color;
+    text-decoration: none;
+    font-size: 2.5rem;
+    text-align: center;
+    line-height: 8rem;
+    position: relative;
+    transition: all 0.5s;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 2rem;
+      height: 2rem;
+      background-color: $primary-color;
+      border-radius: 50%;
+      transition: all 0.3s;
+      z-index: -1;
+      opacity: 0;
+    }
+
+    &::before {
+      left: 0;
+      box-shadow: -3rem 0 0 $primary-color;
+
+      @media screen and (min-width: 24rem) {
+        box-shadow: -5rem 0 0 $primary-color;
+      }
+
+      @media screen and (min-width: 36rem) {
+        box-shadow: -10rem 0 0 $primary-color;
+      }
+    }
+
+    &::after {
+      right: 0;
+      box-shadow: 3rem 0 0 $primary-color;
+
+      @media screen and (min-width: 24rem) {
+        box-shadow: 5rem 0 0 $primary-color;
+      }
+
+      @media screen and (min-width: 36rem) {
+        box-shadow: 10rem 0 0 $primary-color;
+      }
+    }
+
+    &:hover::before {
+      left: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: 3rem 0 0 $primary-color;
+      opacity: 1;
+    }
+
+    &:hover::after {
+      right: 50%;
+      transform: translate(50%, -50%);
+      box-shadow: -3rem 0 0 $primary-color;
+      opacity: 1;
+    }
+
+    span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: $primary-color;
+      border-radius: 10px;
+      transform: scale(0);
+      z-index: -1;
+      transition: all 0.4s;
+    }
+
+    &:hover > span {
+      transform: scale(1);
+      transition-delay: 0.4s;
+    }
+
+    &:hover {
+      color: #fff;
+      transition-delay: 0.4s;
+    }
+
+    @media screen and (min-width: 32rem) {
+      font-size: 4.5rem;
+      width: 40rem;
+    }
+  }
+}

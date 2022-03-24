@@ -1,0 +1,101 @@
+$primary-color: #f6b93b;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: verdana;
+}
+
+body {
+  box-sizing: border-box;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #faf9f6;
+
+  a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: $primary-color;
+    letter-spacing: 0.3rem;
+    padding: 2.5rem 3rem;
+    border: 3px solid $primary-color;
+    transition: all 0.5s;
+    position: relative;
+    overflow: hidden;
+
+    &::before,
+    &::after,
+    & > span::before,
+    & > span::after {
+      content: "";
+      position: absolute;
+      width: 25%;
+      height: 100%;
+      background-color: $primary-color;
+      z-index: -1;
+      transition: all 0.5s;
+    }
+
+    &:hover {
+      color: #fff;
+    }
+
+    // before and after for anchor tag
+    &::before {
+      top: 0;
+      left: -25%;
+    }
+
+    &:hover::before {
+      top: 0;
+      left: 0;
+    }
+
+    &::after {
+      top: -100%;
+      left: 25%;
+    }
+
+    &:hover::after {
+      top: 0;
+      left: 25%;
+    }
+
+    // before and after for span tag
+    & > span::before {
+      top: 100%;
+      right: 25%;
+    }
+
+    &:hover span::before {
+      top: 0;
+      right: 25%;
+    }
+
+    & > span::after {
+      top: 0%;
+      right: -25%;
+    }
+
+    &:hover span::after {
+      top: 0;
+      right: 0;
+    }
+
+    @media screen and (min-width: 40rem) {
+      font-size: 4.5rem;
+      padding: 4rem 8rem;
+    }
+  }
+}

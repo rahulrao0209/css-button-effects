@@ -1,0 +1,85 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: verdana;
+}
+
+body {
+  box-sizing: border-box;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 2rem;
+  height: 8rem;
+  width: 28rem;
+  text-align: center;
+  line-height: 8rem;
+  padding: 0 4rem;
+  letter-spacing: 0.3rem;
+  color: #fdc518;
+  position: relative;
+}
+body a::before {
+  content: "";
+  position: absolute;
+  height: 12rem;
+  width: 28rem;
+  top: -2rem;
+  left: 0;
+  border-left: 1px solid #fa4f4f;
+  border-right: 1px solid #fdc518;
+  transition: transform 1s;
+}
+@media screen and (max-width: 300px) {
+  body a::before {
+    width: 20rem;
+    height: 6rem;
+  }
+}
+body a::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -2rem;
+  height: 8rem;
+  width: 32rem;
+  border-top: 1px solid #fa4f4f;
+  border-bottom: 1px solid #fdc518;
+  transition: transform 1s;
+}
+@media screen and (max-width: 300px) {
+  body a::after {
+    width: 24rem;
+    height: 4rem;
+    top: -1rem;
+  }
+}
+@media screen and (max-width: 300px) {
+  body a {
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
+    width: 20rem;
+    height: 4rem;
+    line-height: 2rem;
+  }
+}
+body a:hover::before {
+  transform: rotateY(180deg);
+}
+body a:hover::after {
+  transform: rotateX(180deg);
+}
+
+/*# sourceMappingURL=style.css.map */

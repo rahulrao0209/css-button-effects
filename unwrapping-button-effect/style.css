@@ -57,12 +57,12 @@ body a::after {
   z-index: -1;
 }
 body a:hover::before {
-  top: 1rem;
+  top: 0.6rem;
   left: 0;
   transform: perspective(100rem) rotateX(85deg);
 }
 body a:hover::after {
-  top: -1rem;
+  top: -0.6rem;
   left: 0;
   transform: perspective(100rem) rotateX(-85deg);
 }

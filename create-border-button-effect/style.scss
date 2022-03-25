@@ -1,0 +1,98 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: sans-serif;
+}
+
+body {
+  box-sizing: border-box;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #272727;
+
+  button {
+    border: none;
+    position: relative;
+    font-size: 2rem;
+    width: 20rem;
+    height: 6rem;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: transparent;
+    color: #fff;
+    overflow: hidden;
+
+    /* Create top border */
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 0.2rem;
+      background-color: #fff;
+      transition: all 0.5s;
+    }
+
+    &:hover::before {
+      left: 0;
+    }
+
+    /* Create bottom border */
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      right: -100%;
+      width: 100%;
+      height: 0.2rem;
+      background-color: #fff;
+      transition: all 0.5s;
+    }
+
+    &:hover::after {
+      right: 0;
+    }
+
+    /* Create left border */
+    & span::before {
+      content: "";
+      position: absolute;
+      bottom: -100%;
+      left: 0;
+      width: 0.2rem;
+      height: 100%;
+      background-color: #fff;
+      transition: all 0.5s;
+    }
+
+    &:hover span::before {
+      bottom: 0;
+    }
+
+    /* Create right border */
+    & span::after {
+      content: "";
+      position: absolute;
+      top: -100%;
+      right: 0;
+      width: 0.2rem;
+      height: 100%;
+      background-color: #fff;
+      transition: all 0.5s;
+    }
+
+    &:hover span::after {
+      top: 0;
+    }
+  }
+}

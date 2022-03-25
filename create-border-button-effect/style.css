@@ -35,6 +35,13 @@ body button {
   /* Create left border */
   /* Create right border */
 }
+@media screen and (min-width: 32rem) {
+  body button {
+    font-size: 3rem;
+    width: 30rem;
+    height: 8rem;
+  }
+}
 body button::before {
   content: "";
   position: absolute;

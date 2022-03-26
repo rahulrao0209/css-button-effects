@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Merienda+One&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Merienda One", cursive;
+}
+
+body {
+  box-sizing: border-box;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #faf9f6;
+}
+body a {
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 400;
+  position: relative;
+  letter-spacing: 0.7rem;
+  padding: 1.5rem 4rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  /* Left side of the button */
+  /* Right side of the button */
+}
+body a::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  left: -1%;
+  top: -0.5rem;
+  background-color: #4b6cb7;
+  transform: skewX(30deg);
+  z-index: -1;
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+body a:hover::before {
+  transform: skewX(0);
+  left: 50%;
+  top: 0%;
+}
+body a::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  left: 51%;
+  top: 0.5rem;
+  background-color: #49a09d;
+  transform: skewX(30deg);
+  z-index: -1;
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+body a:hover::after {
+  transform: skewX(0);
+  left: 0%;
+  top: 0%;
+}
+@media screen and (min-width: 26rem) {
+  body a {
+    padding: 2rem 7rem;
+    font-size: 2.5rem;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

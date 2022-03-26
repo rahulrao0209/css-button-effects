@@ -50,6 +50,7 @@ body {
     }
 
     &:active {
+      transform: translateY(0.1rem);
       box-shadow: 0px 2px 10px rgb(65, 64, 64);
       outline: none;
     }

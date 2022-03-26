@@ -1,0 +1,77 @@
+$primary-color: #00aeff;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  background-color: #faf9f6;
+}
+
+a {
+  text-decoration: none;
+  font-size: 2.5rem;
+  padding: 1.6rem 4rem;
+  color: $primary-color;
+  letter-spacing: 0.2rem;
+  border: 2px solid $primary-color;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.5s;
+
+  &:hover {
+    color: #fff;
+  }
+
+  .wave {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: calc(100% + 22px); // height of the wave image is 22px.
+    background-color: $primary-color;
+    transition: all 1.5s;
+    z-index: -1;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -22px;
+      left: 0;
+      height: 22px; // height of the wave image is 22px.
+      width: 100%;
+      background-image: url(wave.png);
+      animation: wavy 0.5s linear infinite;
+    }
+  }
+
+  &:hover .wave {
+    top: 0;
+  }
+}
+
+/* Create Animation for Wave Effect */
+@keyframes wavy {
+  0% {
+    background-position-x: 0;
+  }
+
+  100% {
+    // width of wave image is 118px.
+    background-position-x: 118px;
+  }
+}

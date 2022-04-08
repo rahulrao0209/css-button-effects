@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Raleway", sans-serif;
+}
+
+body {
+  box-sizing: inherit;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .btn {
+  width: 30rem;
+  height: 6rem;
+  border-top: 2px solid #00d2ff;
+  border-bottom: 2px solid #904e95;
+  border-left: 2px solid #00d2ff;
+  border-right: 2px solid #904e95;
+  border-radius: 1rem;
+  text-align: center;
+  line-height: 6rem;
+  position: relative;
+  overflow: hidden;
+}
+body .btn > span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 4.5rem;
+  font-weight: bold;
+  border-radius: inherit;
+}
+body .btn__top-half {
+  color: #904e95;
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+  animation: split 4s linear infinite;
+}
+body .btn__bottom-half {
+  color: #00d2ff;
+  clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
+  animation: split 4s linear infinite reverse;
+}
+
+/* Animation */
+@keyframes split {
+  0% {
+    transform: translateX(100%);
+  }
+  40% {
+    transform: translateX(0);
+  }
+  60% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
